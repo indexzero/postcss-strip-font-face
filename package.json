@@ -1,6 +1,6 @@
 {
   "name": "postcss-strip-font-face",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "PostCSS plugin to completely strip @font-face rules from css. In other words: koh the @font-face stealer.",
   "main": "index.js",
   "scripts": {
