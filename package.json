@@ -1,0 +1,37 @@
+{
+  "name": "postcss-strip-font-face",
+  "version": "0.0.0",
+  "description": "PostCSS plugin to completely strip @font-face rules from css. In other words: koh the @font-face stealer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indexzero/postcss-strip-font-face.git"
+  },
+  "keywords": [
+    "postcss",
+    "font-face",
+    "remove",
+    "strip"
+  ],
+  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indexzero/postcss-strip-font-face/issues"
+  },
+  "homepage": "https://github.com/indexzero/postcss-strip-font-face#readme",
+  "dependencies": {
+    "diagnostics": "^1.0.1"
+  },
+  "peerDependencies": {
+    "postcss": "*"
+  },
+  "devDependencies": {
+    "assume": "^1.4.1",
+    "mocha": "^3.3.0",
+    "nyc": "^10.3.0",
+    "postcss": "^5.2.17"
+  }
+}
