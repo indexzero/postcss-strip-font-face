@@ -2,15 +2,16 @@ const postcss = require('postcss');
 const stripFontFace = require('./');
 const assume = require('assume');
 
-function check(input, output) {
-  const processor = postcss([stripFontFace()]);
-  const actual = processor.process(input).css;
+async function check(input, output) {
+  const processor = await postcss([stripFontFace({})]).process(input, {from: undefined})
+  const actual = processor.css;
+
   assume(actual).to.include(output);
   assume(actual).to.not.include('@font-face');
 };
 
-describe('postcss-strip-font-face', function () {
-  it('injects variables correctly', function () {
+describe('postcss-strip-font-face', () => {
+  it('injects variables correctly', async () => {
     const css = '.whatever { font-weight: normal; }'
     const fontFace = `
       @font-face {
@@ -22,6 +23,6 @@ describe('postcss-strip-font-face', function () {
       }
     `;
 
-    check(`${css}\n${fontFace}`, css);
+    await check(`${css}\n${fontFace}`, css);
   });
 });
